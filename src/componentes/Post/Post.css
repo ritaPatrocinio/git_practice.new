@@ -1,0 +1,46 @@
+img {
+    max-width: 500px;
+    max-height: 600px;
+    border-radius: 10px;
+}
+
+.postDiv {
+    background-color: white;
+    width: 80%;
+    margin: 4% auto;
+    padding: 2%;
+    border-radius: 10px;
+    display: flex;
+}
+
+.post {
+    width: 70%;
+    margin: auto;
+}
+
+.comments {
+    align-items: center;
+    display: flex;
+}
+
+.grey {
+    color: gray
+}
+
+.comIcon {
+    margin: 5px 5px 0px 0px;
+    
+}
+
+.flex {
+    display: flex;
+    
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.arrow {
+    cursor: pointer;
+}
