@@ -1,14 +1,8 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
-import {selectTerm} from '../Search/searchSlice';
-import { useSelector } from "react-redux";
-
-
 
 export const loadAllPosts = createAsyncThunk(
     'postList/loadAllPosts',
     async (subreddit) => {
-        //const term = useSelector(selectTerm);
-        //const data = await fetch('https://www.reddit.com/r/popular/best.json?limit=20&t=week');
         const data = await fetch(`https://www.reddit.com/r/${subreddit}.json`);
          const json = await data.json();
         return json.data.children.map(post => post.data)
@@ -43,4 +37,5 @@ export const postListSlice = createSlice({
 
 export const selectAllPosts = (state) => state.postList.posts;
 export const isLoading = (state) => state.postList.isLoadingPost;
+export const hasError = (state) => state.postList.hasError;
 export default postListSlice.reducer

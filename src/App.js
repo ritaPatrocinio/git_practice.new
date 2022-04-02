@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <FaReddit size={30} className="reddit logo-icon" />
+      <FaReddit style={{color: '#001ed8'}} size={30} className="reddit logo-icon" />
       <span style={{color: '#001ed8', display: 'inline'}} >Reddit</span><span style={{display: 'inline'}}>Minimal</span>
       </header>
       <PostList></PostList>

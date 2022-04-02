@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Post from '../../componentes/Post/Post';
 import Search from "../Search/Search";
 
-import { selectAllPosts, isLoading, loadAllPosts } from "./postListSlice"; 
+import { selectAllPosts, isLoading, loadAllPosts, hasError } from "./postListSlice"; 
 import {selectTerm} from '../Search/searchSlice';
 
 export default function PostList() {
@@ -11,6 +11,7 @@ export default function PostList() {
     const posts = useSelector(selectAllPosts);
     const loading = useSelector(isLoading);
     const searchTerm = useSelector(selectTerm) ;
+    const error = useSelector(hasError)
     const term = searchTerm !== '' ? searchTerm : 'popular';
 
     useEffect(() => {
@@ -19,6 +20,9 @@ export default function PostList() {
 
     if(loading){
         return <p>Loading</p>
+    }
+    if(error){
+        return <p>Failed to load posts.</p>
     }
     console.log(posts)
 
