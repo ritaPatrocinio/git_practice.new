@@ -83,6 +83,10 @@ p {
     text-decoration: none !important;
 }
 
+.title:hover {
+    color: rgb(75, 153, 255);
+}
+
 .post {
     width: 70%;
     margin: auto;
