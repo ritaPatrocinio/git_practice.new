@@ -7,3 +7,16 @@
 h6 {
     margin: 3% 0 2% 0;
 }
+
+p, h6 {
+    word-wrap: break-word 
+ }
+ 
+ pre, div {
+     overflow-x: auto;
+     white-space: pre-wrap;
+     white-space: -moz-pre-wrap;
+     white-space: -pre-wrap;
+     white-space: -o-pre-wrap;
+     word-wrap: break-word;
+   }
