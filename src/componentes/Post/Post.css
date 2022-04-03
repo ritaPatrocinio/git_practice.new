@@ -75,7 +75,6 @@ p {
     padding: 2%;
     border-radius: 10px;
     display: flex;
-    cursor: pointer;
 }
 
 
@@ -92,6 +91,7 @@ p {
 .comments {
     align-items: center;
     display: flex;
+    cursor: pointer;
 }
 
 .grey {
@@ -100,7 +100,15 @@ p {
 
 .comIcon {
     margin: 5px 5px 0px 0px;
-    
+    cursor: pointer;
+}
+
+.comments:hover {
+    color: rgb(75, 153, 255);
+}
+
+.comIcon:hover {
+    color: rgb(75, 153, 255);
 }
 
 .flex {

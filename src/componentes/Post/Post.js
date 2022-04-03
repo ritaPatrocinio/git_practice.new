@@ -41,7 +41,7 @@ export default function Post({post}) {
             </div>
             <div className="post">
                 <a target="_blank" rel="noreferrer" href={`https://www.reddit.com/${post.permalink}`}><h4 className="title">{post.title}</h4></a>
-                <p>{post.selftext}</p>
+                <p style={{textAlign: 'justify'}}>{post.selftext}</p>
                 { !post.media ? 
                 post.preview ? 
                 <div>
