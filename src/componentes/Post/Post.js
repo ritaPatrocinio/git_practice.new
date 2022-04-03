@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import './Post.css'
 import Comments from "../Comments/Comments";
-import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { FaArrowUp, FaArrowDown} from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 import { MdOutlineModeComment } from 'react-icons/md';
 
 export default function Post({post}) {
@@ -41,14 +42,28 @@ export default function Post({post}) {
             <div className="post">
                 <a target="_blank" rel="noreferrer" href={`https://www.reddit.com/${post.permalink}`}><h4 className="title">{post.title}</h4></a>
                 <p>{post.selftext}</p>
-                {!post.url.includes('png') && !post.media ? 
-                post.preview ? <a target="_blank" rel="noreferrer" href={post.url}><img src={post.preview.images[0].source.url.replace('amp;', '')} alt='' /></a>  : ''  : 
+                { !post.media ? 
+                post.preview ? 
+                <div>
+                    {!post.url.includes('png' ) && !post.url.includes('jpg') ? 
+                    <a className="link" target="_blank" rel="noreferrer" href={post.url}>
+                        <span>{post.url.split('').slice(12,50).join('') + '...'}
+                        </span><FiExternalLink className="extLink"></FiExternalLink> 
+                    </a> 
+                    : '' }
+                    <a target="_blank" rel="noreferrer" href={post.url}>
+                        <img src={post.preview.images[0].source.url.replace('amp;', '')} alt='' />
+                    </a>
+                </div> 
+                : ''  : 
                 <img src={post.url} alt='' />}
-
+                
                 {post.media &&  post.secure_media.reddit_video? 
-                <video width="520" height="440" controls>
-                    <source src={post.secure_media.reddit_video.scrubber_media_url} type="video/mp4"></source>
-                </video> : ''}
+                <a target="_blank" rel="noreferrer" href={post.url}>
+                    <video width="520" height="440" controls>
+                        <source src={post.secure_media.reddit_video.scrubber_media_url} type="video/mp4"></source>
+                    </video> 
+                </a> : ''}
                 
                 <div className="flex space-between">
                 <p className="grey">Posted by {post.author}</p>

@@ -4,4 +4,29 @@
     border-radius: 5px;
     padding: 3px 2%;
   }
+
+  @media only screen and (max-width: 550px) {
+    .search {
+      width: 350px !important;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .search {
+      width: 300px !important;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+  .search {
+    width: 250px !important;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .search {
+    width: 230px !important;
+  }
+}
   
