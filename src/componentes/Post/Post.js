@@ -4,6 +4,7 @@ import Comments from "../Comments/Comments";
 import { FaArrowUp, FaArrowDown} from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 import { MdOutlineModeComment } from 'react-icons/md';
+import Markdown from 'markdown-to-jsx';
 
 export default function Post({post}) {
     const [likes, setLikes] = useState(0);
@@ -41,7 +42,7 @@ export default function Post({post}) {
             </div>
             <div className="post">
                 <a target="_blank" rel="noreferrer" href={`https://www.reddit.com/${post.permalink}`}><h4 className="title">{post.title}</h4></a>
-                <p style={{textAlign: 'justify'}}>{post.selftext}</p>
+                <Markdown style={{textAlign: 'justify'}}>{post.selftext}</Markdown>
                 { !post.media ? 
                 post.preview ? 
                 <div>
@@ -56,15 +57,13 @@ export default function Post({post}) {
                     </a>
                 </div> 
                 : ''  : 
-                <img src={post.url} alt='' />}
-                
+                <img src={post.url} alt='' />} 
                 {post.media &&  post.secure_media.reddit_video? 
                 <a target="_blank" rel="noreferrer" href={post.url}>
                     <video width="520" height="440" controls>
                         <source src={post.secure_media.reddit_video.scrubber_media_url} type="video/mp4"></source>
                     </video> 
                 </a> : ''}
-                
                 <div className="flex space-between">
                 <p className="grey">Posted by {post.author}</p>
                 {timeBetween()}

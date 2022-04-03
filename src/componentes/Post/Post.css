@@ -8,6 +8,15 @@ p {
    word-wrap: break-word 
 }
 
+pre, div {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+  }
+
 @media only screen and (max-width: 768px) {
     img, video {
         max-width: 400px;
