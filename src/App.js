@@ -3,6 +3,7 @@ import { FaReddit } from 'react-icons/fa';
 import './App.css';
 import PostList from './features/PostList/PostList.js';
 import { SafeAreaView } from 'react-native';
+import Search from './features/Search/Search';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <FaReddit style={{color: '#001ed8'}} size={30} className="reddit logo-icon" />
       <span style={{color: '#001ed8', display: 'inline'}} >Reddit</span><span style={{display: 'inline'}}>Minimal</span>
       </header>
+      <Search></Search>
       <PostList></PostList>
     </div>
     </Fragment>

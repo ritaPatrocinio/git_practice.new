@@ -3,5 +3,6 @@ import './Comments.css';
 import Comment from "../Comment/Comment";
 
 export default function Comments({comments}) { 
-    return comments.map(comment => <Comment comment={comment}></Comment>)
+    console.log('comments', comments)
+    return comments.map(comment => <Comment key={comment.id} comment={comment}></Comment>)
 }
