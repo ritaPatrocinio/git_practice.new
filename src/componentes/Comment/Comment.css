@@ -1,22 +1,27 @@
 .comDiv {
-    margin-top: 4%;
-    border-top: 1px solid #e0e0e0;
-    margin-left: 6%;
+  margin-top: 4%;
+  border-top: 1px solid #e0e0e0;
+  margin-left: 6%;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
 }
 
 h6 {
-    margin: 3% 0 2% 0;
+  margin: 3% 0 2% 0;
 }
 
-p, h6 {
-    word-wrap: break-word 
- }
- 
- pre, div {
-     overflow-x: auto;
-     white-space: pre-wrap;
-     white-space: -moz-pre-wrap;
-     white-space: -pre-wrap;
-     white-space: -o-pre-wrap;
-     word-wrap: break-word;
-   }
+p,
+h6 {
+  word-wrap: break-word;
+}
+
+pre,
+div {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
